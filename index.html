@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>NTR Fever</title>
+<style>
+.divMain {
+	height: 500px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	margin: auto;
+}
+
+.divMain2 {
+	height: 500px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	margin: auto;
+}
+
+.divMain3 {
+	height: 350px;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	margin: auto;
+}
+
+.divNext {
+	height: 175px;
+	right: 0px;
+	top: 0;
+	bottom: 0;
+	width: 80px;
+	position: absolute;
+	margin: auto;
+}
+
+.buttonNext {
+	background: transparent;
+	border-width: 0px;
+	outline: none;
+}
+</style>
+</head>
+<body bgcolor=#32CD32>
+<center-left><font size=10>NTR Fever</font></center-left>
+<div class="divMain">
+<center><img src="ntr.png"></center>
+</div>
+<div class="divMain2">
+<center-left><h2>曾<br>經<br>有<br>位<br>牛<br>頭<br>人<br>這<br>麽<br>說<br>過<br>:</h2></center-left>
+</div>
+<div class="divMain3">
+<center><font color="white" size=10><span id="Hitokoto">每個人心中都有個牛頭人。</span></font></center>
+<center><font color="white" size=5><span id="HitokotoEng">There is an NTR deep in everyone's heart.</span></font></center>
+<center><font color="white" size=5>————<span id="Author">某哲学家</span></font></center>
+</div>
+<div class="divNext">
+<button id="buttonNext" class="buttonNext"><svg class="icon" viewBox="0 0 1024 1024" p-id="2993" width="64" height="64"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#181818" p-id="2994"></path></svg></center-right></button>
+</div>
+<script type="text/javascript">
+author = new Array(2);
+author[0]='某哲學家';
+author[1]='某祖安怒獸';
+author[2]='某思想家';
+tipslen=3
+tips = new Array(tipslen);
+tipsEng = new Array(tipslen);
+tips[0] = '每個人心中都有個牛頭人。';
+tipsEng[0] = 'There is an NTR deep in everyone\'s heart.';
+tips[1] = '純愛，邪教，不行。\n牛頭人，正道之光，永生。';
+tipsEng[1] = 'PureLove,Cult,No way.\nNTR,Brightness of the right way,Fever.';
+tips[2] = '純愛Biss，牛頭人永生。';
+tipsEng[2] = 'PureLove biss,NTR fever.';
+tips[3] = '我們侍奉於黑暗，\n我們躬耕於光明，\n我們是牛頭人。';
+tipsEng[3] = 'We serve the dark,\nWe work for the brightness,\nWe are NTRs.';
+
+curTextIndex = 0;
+buttonNext.onclick = function() {
+    if (curTextIndex == tipslen) {
+        curTextIndex = -1
+    }
+    curTextIndex = curTextIndex + 1;
+    var dom = document.querySelector('#Hitokoto');
+    Array.isArray(dom) ? dom[0].innerText = Hitokoto: dom.innerText = tips[curTextIndex];
+    var domEng = document.querySelector('#HitokotoEng');
+    Array.isArray(domEng) ? domEng[0].innerText = HitokotoEng: domEng.innerText = tipsEng[curTextIndex];
+	var domAut = document.querySelector('#Author');
+    Array.isArray(domAut) ? domAut[0].innerText = Author: domAut.innerText = author[Math.floor(Math.random() * author.length)];
+}
+</script>
+</body>
+</html>
